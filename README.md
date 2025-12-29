@@ -1,27 +1,72 @@
-# Project
+# Batch-18  
+# Course: FrontEnd Developer
+# Student Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+This project is a **Student Management System** built using **Angular 14**.
+It allows users to add, update, delete, and view student records using a clean and modular structure.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This application is designed using a **feature-based architecture**.
+Each feature is separated into components and services to ensure scalability and maintainability.
 
-## Code scaffolding
+##  Folder Structure
+src/
+└── app/
+└── student/
+├── components/
+│ ├── std-dashboard/
+│ ├── std-form/
+│ └── std-table/
+│
+├── services/
+│ └── std.service.ts
+│
+├── models/
+│ └── student.model.ts
+│
+├── student.module.ts
+└── student-routing.module.ts
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##  Component Responsibilities
 
-## Build
+### 🔹 Student Dashboard
+- Acts as a container component  
+- Handles communication between child components  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🔹 Student Form
+- Used for adding and editing students  
+- Sends form data to the dashboard  
 
-## Running unit tests
+### 🔹 Student Table
+- Displays the list of students  
+- Handles edit and delete actions  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Data Flow
+Student Form → Dashboard → Service
 
-## Running end-to-end tests
+##  Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Angular 14
+- TypeScript
+- Angular Material
+- HTML5
+- SCSS
 
-## Further help
+##  Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Add student
+- Update student
+- Delete student
+- Reusable components
+- Clean UI
+
+## How to Run the Project
+
+```bash
+npm install
+ng serve
+
+
+
+

@@ -1,0 +1,51 @@
+<div class="container mt-3">
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <div class="header-gradient d-flex align-items-center justify-content-between">
+                <h4 class="m-0">Add Student</h4>
+
+                <button mat-mini-fab color="primary">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="table-wrapper">
+                <table class="table table-hover text-center mb-0">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Edit</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let std of stdArr; index as i">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ std.fname }} {{ std.lname }}</td>
+                            <td>{{ std.email }}</td>
+                            <td>{{ std.contact }}</td>
+                            <td>
+                                <button mat-icon-button color="primary">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                            </td>
+                            <td>
+                                <button mat-icon-button color="warn">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

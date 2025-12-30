@@ -1,1 +1,28 @@
-<p>std-form works!</p>
+<h2>{{isEditMode ? 'Update Student' : 'Add Student'}}</h2>
+<form #formRef="ngForm">
+    <div class="form-group">
+        <label for="fname">First Name</label>
+        <input ngModel required name="fname" class="form-control" id="fname">
+    </div>
+    <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input ngModel required name="lname" class="form-control" id="lname">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input ngModel required name="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+        <label for="contact">Contact</label>
+        <input ngModel required name="contact" class="form-control" id="contact">
+    </div>
+    <div class="form-group">
+        <label for="profile">Profile</label>
+        <input ngModel required name="profile" class="form-control" id="profile">
+    </div>
+   <div class="d-flex justify-content-between">
+     <button  *ngIf="!isEditMode"  type="submit" mat-raised-button color="primary">Add Student</button>
+    <button (click)="onUpdate()" *ngIf="isEditMode" type="button" mat-raised-button color="primary">Update Student</button>
+    <button (click)="onClose()" type="button" mat-raised-button color="warn">Close</button>
+   </div>
+</form>

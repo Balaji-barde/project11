@@ -33,7 +33,9 @@
                             <td>{{ std.email }}</td>
                             <td>{{ std.contact }}</td>
                             <td>
-                                <button mat-icon-button color="primary">
+                                <button
+                                (click)="onEdit(std)"
+                                mat-icon-button color="primary">
                                     <mat-icon>edit</mat-icon>
                                 </button>
                             </td>

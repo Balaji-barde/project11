@@ -1,5 +1,4 @@
-# Batch-18  
-# Course: FrontEnd Developer
+
 # Student Management System
 
 This project is a **Student Management System** built using **Angular 14**.

@@ -8,6 +8,7 @@ import { MaterialModule } from './shared/material/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

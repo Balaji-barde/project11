@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StdFormComponent } from '../std-form/std-form.component';
 import { GetConfirmComponent } from '../get-confirm/get-confirm.component';
+import { SnackbarService } from '../../services/snackbar.service';
 
 @Component({
   selector: 'app-std-dashboard',
@@ -15,8 +16,10 @@ export class StdDashboardComponent implements OnInit {
 
   stdArr: Array<Istd> = []
 
-  constructor(private _stdService: StdService,
-              private _matDialog : MatDialog
+  constructor(
+    private _stdService: StdService,
+    private matdialog : MatDialog,
+    private _snackbar : SnackbarService
   ) { }
 
   ngOnInit(): void {
@@ -62,7 +65,7 @@ export class StdDashboardComponent implements OnInit {
             this._stdService.RemoveStd(id)
             .subscribe({
               next:res=>{
-                console.log(res);
+               this._snackbar.onpenSnackbar(`the student with id ${res} is removed successfully!!!`)
               }
             })
           }

@@ -48,4 +48,9 @@ export class StdService {
    fetchStdData():Observable<Array<Istd>>{
     return of(this.stdArr)
    }
+   RemoveStd(id:string):Observable<string>{
+    let getindex = this.stdArr.findIndex(std=>std.id===id)
+    this.stdArr.splice(getindex,1)
+    return of(id)
+   }
 }

@@ -5,6 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 
 let matArr = [
   MatButtonModule,
@@ -13,6 +14,7 @@ let matArr = [
   MatIconModule,
   MatSnackBarModule,
   MatTooltipModule,
+  MatDialogModule
 ];
 
 @NgModule({

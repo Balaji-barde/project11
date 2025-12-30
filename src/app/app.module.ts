@@ -6,6 +6,7 @@ import { StdFormComponent } from './shared/components/std-form/std-form.componen
 import { StdTableComponent } from './shared/components/std-table/std-table.component';
 import { MaterialModule } from './shared/material/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
-    
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

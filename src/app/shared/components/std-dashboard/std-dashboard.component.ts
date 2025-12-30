@@ -4,6 +4,7 @@ import { Istd } from '../../models/std';
 import { Observable } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StdFormComponent } from '../std-form/std-form.component';
+import { GetConfirmComponent } from '../get-confirm/get-confirm.component';
 
 @Component({
   selector: 'app-std-dashboard',
@@ -47,4 +48,25 @@ export class StdDashboardComponent implements OnInit {
     let dialogRef = this._matDialog.open(StdFormComponent,dialogConfi)
   }
 
+  Onremovestd(id:string){
+
+    let config = new MatDialogConfig()
+    config.width = "300px";
+    config.disableClose = true;
+    config.data = "are you sure, you want to remove this student";
+  let matdialogRef=  this._matDialog.open(GetConfirmComponent,config);
+      matdialogRef.afterClosed()
+      .subscribe({
+        next:res=>{
+          if(res){
+            this._stdService.RemoveStd(id)
+            .subscribe({
+              next:res=>{
+                console.log(res);
+              }
+            })
+          }
+        }
+      })
+  }  
 }

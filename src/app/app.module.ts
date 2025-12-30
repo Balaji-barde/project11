@@ -7,19 +7,23 @@ import { StdTableComponent } from './shared/components/std-table/std-table.compo
 import { MaterialModule } from './shared/material/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StdDashboardComponent,
     StdFormComponent,
-    StdTableComponent
+    StdTableComponent,
+    GetConfirmComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

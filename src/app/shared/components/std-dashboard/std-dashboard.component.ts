@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StdService } from '../../services/std.service';
 import { Istd } from '../../models/std';
 import { Observable } from 'rxjs';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { StdFormComponent } from '../std-form/std-form.component';
 
 @Component({
   selector: 'app-std-dashboard',
@@ -12,7 +14,9 @@ export class StdDashboardComponent implements OnInit {
 
   stdArr: Array<Istd> = []
 
-  constructor(private _stdService: StdService) { }
+  constructor(private _stdService: StdService,
+    private _matdailog:MatDialog
+  ) { }
 
   ngOnInit(): void {
 
@@ -30,6 +34,19 @@ export class StdDashboardComponent implements OnInit {
         console.log(err);
 
       }
+    })
+  }
+
+  onadd(){
+    let config=new MatDialogConfig()
+    config.width='400px',
+    config.disableClose=true
+let MatDialogref= this._matdailog.open(StdFormComponent,config)
+    MatDialogref.afterClosed().subscribe({
+      next:res=>{
+        console.log(res);
+        
+      },
     })
   }
 

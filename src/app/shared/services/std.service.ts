@@ -3,49 +3,52 @@ import { Istd } from '../models/std';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StdService {
-
-  constructor() { }
-
+  constructor() {}
 
   stdArr: Array<Istd> = [
     {
-      fname: "Irshad",
-      lname: "shaikh",
-      email: "irshad@123.gmail.com",
+      fname: 'Irshad',
+      lname: 'shaikh',
+      email: 'irshad@123.gmail.com',
       contact: 8766737322,
-      id: "123",
-      profile: "Angular Developer"
+      id: '123',
+      profile: 'Angular Developer',
     },
     {
-      fname: "Rohan",
-      lname: "Kulkarni",
-      email: "rohan@124.gmail.com",
+      fname: 'Rohan',
+      lname: 'Kulkarni',
+      email: 'rohan@124.gmail.com',
       contact: 9322670690,
-      id: "193",
-      profile: "FullStack Developer"
+      id: '193',
+      profile: 'FullStack Developer',
     },
     {
-      fname: "Sunny",
-      lname: "Yenpure",
-      email: "sunny@420.gmail.com",
+      fname: 'Sunny',
+      lname: 'Yenpure',
+      email: 'sunny@420.gmail.com',
       contact: 9579478069,
-      id: "193",
-      profile: "SoftWare Developer"
+      id: '193',
+      profile: 'SoftWare Developer',
     },
     {
-      fname: "Balaji",
-      lname: "Barde",
-      email: "balaji@134.gmail.com",
+      fname: 'Balaji',
+      lname: 'Barde',
+      email: 'balaji@134.gmail.com',
       contact: 7666816697,
-      id: "153",
-      profile: "SoftWare Developer"
-    }
-  ]
+      id: '153',
+      profile: 'SoftWare Developer',
+    },
+  ];
 
-   fetchStdData():Observable<Array<Istd>>{
-    return of(this.stdArr)
-   }
+  fetchStdData(): Observable<Array<Istd>> {
+    return of(this.stdArr);
+  }
+
+  createStd(std: Istd): Observable<Istd[]> {
+this.stdArr.unshift(std)
+return of(this.stdArr)
+  }
 }

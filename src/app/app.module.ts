@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
+    MatDialogModule,
     MatDialogModule,
     MatSnackBarModule,
     FormsModule,

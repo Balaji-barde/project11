@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StdService } from '../../services/std.service';
 import { Istd } from '../../models/std';
-import { Observable } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StdFormComponent } from '../std-form/std-form.component';
 import { GetConfirmComponent } from '../get-confirm/get-confirm.component';
@@ -42,13 +41,20 @@ export class StdDashboardComponent implements OnInit {
     })
   }
 
+  onadd(){
+    let config=new MatDialogConfig()
+    config.width='400px',
+    config.disableClose=true
+let MatDialogref= this.matdialog.open(StdFormComponent,config)
+  }
+
   onEdit(std: Istd){
     const dialogConfi = new MatDialogConfig()
     dialogConfi.width = '400px'
     dialogConfi.maxWidth = '90%'
     dialogConfi.disableClose = true
     dialogConfi.data = std
-    let dialogRef = this._matDialog.open(StdFormComponent,dialogConfi)
+    let dialogRef = this.matdialog.open(StdFormComponent,dialogConfi)
   }
 
   Onremovestd(id:string){
@@ -57,7 +63,7 @@ export class StdDashboardComponent implements OnInit {
     config.width = "300px";
     config.disableClose = true;
     config.data = "are you sure, you want to remove this student";
-  let matdialogRef=  this._matDialog.open(GetConfirmComponent,config);
+  let matdialogRef=  this.matdialog.open(GetConfirmComponent,config);
       matdialogRef.afterClosed()
       .subscribe({
         next:res=>{

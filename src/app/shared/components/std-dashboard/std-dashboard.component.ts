@@ -57,25 +57,51 @@ let MatDialogref= this.matdialog.open(StdFormComponent,config)
     let dialogRef = this.matdialog.open(StdFormComponent,dialogConfi)
   }
 
-  Onremovestd(id:string){
 
-    let config = new MatDialogConfig()
-    config.width = "300px";
-    config.disableClose = true;
-    config.data = "are you sure, you want to remove this student";
-  let matdialogRef=  this.matdialog.open(GetConfirmComponent,config);
-      matdialogRef.afterClosed()
-      .subscribe({
-        next:res=>{
-          if(res){
-            this._stdService.RemoveStd(id)
-            .subscribe({
-              next:res=>{
-               this._snackbar.onpenSnackbar(`the student with id ${res} is removed successfully!!!`)
-              }
-            })
+  
+
+ 
+  //   config.width = "300px";
+  //   config.disableClose = true;
+  //   config.data = "are you sure, you want to remove this student";
+  // let matdialogRef=  this.matdialog.open(GetConfirmComponent,config);
+  //     matdialogRef.afterClosed()
+  //     .subscribe({
+  //       next:res=>{
+  //         if(res){
+  //           this._stdService.RemoveStd(id)
+  //           .subscribe({
+  //             next:res=>{
+  //              this._snackbar.onpenSnackbar(`the student with id ${res} is removed successfully!!!`)
+  //             }
+  //           })
+  //         }
+  //       }
+  //     })
+  // }  
+
+  onRemove(id: string) {
+  let config = new MatDialogConfig();
+  config.width = "300px";
+  config.disableClose = true;
+  config.data = "Are you sure you want to remove this student?";
+
+  let dialogRef = this.matdialog.open(GetConfirmComponent, config);
+
+  dialogRef.afterClosed().subscribe({
+    next: res => {
+      if (res) {
+        this._stdService.RemoveStd(id).subscribe({
+          next: () => {
+            this._snackbar.onpenSnackbar(
+              `Student removed successfully!`
+            );
+            this.getData(); 
           }
-        }
-      })
-  }  
+        });
+      }
+    }
+  });
+}
+
 }

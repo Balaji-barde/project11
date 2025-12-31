@@ -6,9 +6,7 @@
       >
         <h4 class="m-0">Add Student</h4>
 
-        <button
-        (click)="onadd()"
-        mat-mini-fab color="primary">
+        <button (click)="onadd()" mat-mini-fab color="primary">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -36,13 +34,18 @@
               <td>{{ std.fname }} {{ std.lname }}</td>
               <td>{{ std.email }}</td>
               <td>{{ std.contact }}</td>
-              <td>
-                <button mat-icon-button color="primary">
+
+              <td class="d-flex justify-content-center">
+                <button mat-icon-button color="primary" (click)="onEdit(std)">
                   <mat-icon>edit</mat-icon>
                 </button>
               </td>
               <td>
-                <button mat-icon-button color="warn">
+                <button
+                  mat-icon-button
+                  color="warn"
+                  (click)="onRemove(std.id)"
+                >
                   <mat-icon>delete</mat-icon>
                 </button>
               </td>

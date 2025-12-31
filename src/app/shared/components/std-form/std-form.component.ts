@@ -20,6 +20,7 @@ stdObj ! : Istd;
   }
   fetch(){
     if(this.stdObj){
+      this.isIneditmode=true
       setTimeout(()=>{
         this.stdform.form.patchValue(this.stdObj)
       },0)
@@ -65,7 +66,7 @@ stdObj ! : Istd;
       .subscribe({
         next : res =>{
           this._snackBar.snackBar('Student details is updated successfully!!!')
-          this.isIneditmode = true;
+          this.isIneditmode = false;
           this.stdform.reset()
           this._matDialog.close()
         },

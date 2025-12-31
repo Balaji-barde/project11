@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar, MatSnackBarHorizontalPosition } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class SnackbarService {
-  constructor(private _snackbar: MatSnackBar) {}
 
-  opensnackbar(msg: string) {
-    this._snackbar.open(msg, 'Close', {
-      duration: 3000,
-      horizontalPosition: 'start',
-      verticalPosition:'top'
-    });
-  }
+  constructor(
+    private snackbar : MatSnackBar
+    ) { }
+
+    onpenSnackbar(mesg:string){
+      this.snackbar.open(mesg,"close",{
+        verticalPosition:"top",
+        horizontalPosition : "left",
+        duration : 3000
+      })
+    }
 }
